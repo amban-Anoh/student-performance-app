@@ -11,6 +11,24 @@
         Writing Score: <input type="text" name="writing"><br>
         <input type="submit" value="Predict">
     </form>
-    <h3>{{ prediction_text }}</h3>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+
+        <hr>
+        <h4>About the Race/Ethnicity Groups</h4>
+        <p>
+            The race/ethnicity labels (Group A–E) are anonymized demographic groupings from the dataset and do not represent real-world classifications.
+            They are used only for educational and modeling purposes.
+        </p>
+        <ul>
+            <li><strong>Group A</strong>: Students with lower average scores overall</li>
+            <li><strong>Group B</strong>: Students with moderate performance</li>
+            <li><strong>Group C</strong>: Students around average performance</li>
+            <li><strong>Group D</strong>: Students with higher scores</li>
+            <li><strong>Group E</strong>: Top-performing group in the dataset</li>
+        </ul>
+    {% endif %}
 </body>
 </html>
+
